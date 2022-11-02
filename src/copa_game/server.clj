@@ -15,7 +15,7 @@
     :config (config/new-config)
     :http (http/new-http)
     :router (router/new-router routes/routes)
-    :webserver (component/using (webserver/new-webserver) [:config :http :router :database])
+    :webserver (component/using (webserver/new-webserver) [:config :http :router])
   ))
 
 (defn start-system! [system-map]

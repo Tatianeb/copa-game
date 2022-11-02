@@ -5,6 +5,6 @@
 (def routes
   ["/swagger.json"
    {:get {:no-doc true
-          :swagger {:info {:title "btc-wallet"
-                           :description "small sample using the microservice-boilerplate"}}
+          :swagger {:info {:title "test"
+                           :description "test"}}
           :handler (swagger/create-swagger-handler)}}])
