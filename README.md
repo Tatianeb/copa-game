@@ -15,4 +15,18 @@ To mount the switch is necessary:
 
 #### Elimination Phase
 From this stage onwards it is necessary to perform matches between games. Match is a contest between two games, where the game with the highest score is the winner. 
-If there are disputes between games with the same score,use the tie-breaking criteria described below.
+If there are disputes between games with the same score,use the tie-breaking criteria described.
+
+# Repl
+To open a nrepl
+```bash
+clj -M:nrepl
+```
+
+## Running the server
+First you need to have the database running, for this you can use the docker command in the step above.
+
+### Repl
+You can start a repl open and evaluate the file `src/microservice_boilerplate/server.clj` and execute following code:
+```clojure
+(start-system! (build-system-map))

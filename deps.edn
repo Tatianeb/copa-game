@@ -6,6 +6,8 @@
         com.github.seancorfield/honeysql {:mvn/version "2.2.840"}
         com.github.seancorfield/next.jdbc {:mvn/version "1.2.761"}
         com.stuartsierra/component {:mvn/version "1.0.0"}
+        com.taoensso/timbre {:mvn/version "5.1.2"}
+        com.zaxxer/HikariCP {:mvn/version "5.0.1"}
         io.pedestal/pedestal.jetty  {:mvn/version "0.5.9"}
         io.pedestal/pedestal.service  {:mvn/version "0.5.9"}
         metosin/muuntaja {:mvn/version "0.6.8"}

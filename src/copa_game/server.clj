@@ -35,4 +35,6 @@
   (start-system! (build-system-map)))
 
 (comment
+  (build-system-map)
+  (start-system! (build-system-map))
   (stop-system!))
