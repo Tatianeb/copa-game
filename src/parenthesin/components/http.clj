@@ -1,9 +1,10 @@
 (ns parenthesin.components.http
-  (:require [clj-http.client :as http]
-            [clj-http.util :as http-util]
-            [com.stuartsierra.component :as component]
-            [parenthesin.logs :as logs]
-            [schema.core :as s]))
+  (:require
+   [clj-http.client :as http]
+   [clj-http.util :as http-util]
+   [com.stuartsierra.component :as component]
+   [parenthesin.logs :as logs]
+   [schema.core :as s]))
 
 (s/defschema HttpRequestInput
   {:url s/Str
@@ -17,7 +18,7 @@
   (if (http-util/opt req :async)
     (if (some nil? [respond raise])
       (throw (IllegalArgumentException.
-               "If :async? is true, you must pass respond and raise"))
+              "If :async? is true, you must pass respond and raise"))
       (http/request (dissoc req :respond :raise) respond raise))
     (http/request req)))
 

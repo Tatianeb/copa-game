@@ -23,6 +23,11 @@ To open a nrepl
 clj -M:nrepl
 ```
 
+### Lint fix and format
+```bash
+clj -M:clojure-lsp format && clj -M:clojure-lsp clean-ns && clj -M:clojure-lsp diagnostics
+```
+
 ## Running the server
 First you need to have the database running, for this you can use the docker command in the step above.
 
