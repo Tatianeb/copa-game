@@ -1,8 +1,8 @@
 (ns copa-game.ports.http-in
-  (:require [copa-game.controllers :as controllers]))
+  (:require [copa-game.ports.http-out :as http-out]))
 
 (defn get-teams
   [{components :components}]
-  (let [{:keys [entries]} (controllers/get-teams components)]
+  (let [entries (http-out/get-teams components)]
     {:status 200
      :body entries}))

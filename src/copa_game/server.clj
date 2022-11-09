@@ -5,8 +5,7 @@
             [parenthesin.components.http :as http]
             [parenthesin.components.router :as router]
             [parenthesin.components.webserver :as webserver]
-            [parenthesin.logs :as logs]
-            ))
+            [parenthesin.logs :as logs]))
 
 (def system-atom (atom nil))
 
@@ -37,4 +36,7 @@
 (comment
   (build-system-map)
   (start-system! (build-system-map))
-  (stop-system!))
+  (stop-system!)
+  (def http (:http @system-atom))
+  (get-teams http)
+  )

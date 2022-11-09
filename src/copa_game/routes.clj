@@ -1,7 +1,8 @@
 (ns copa-game.routes
   (:require [copa-game.ports.http-in :as ports.http-in]
             [reitit.swagger :as swagger]
-            [schema.core :as s]))
+            [schema.core :as s]
+            [copa-game.schemas.out :as out]))
 
 
 (def routes
@@ -15,7 +16,7 @@
 
    ["/read"
     {:get {:summary "get all teams"
-           :responses {200 {:body [s/Any]}
+           :responses {200 {:body [out/Team]}
                        500 {:body s/Str}}
            :handler ports.http-in/get-teams}}]
    ]])
