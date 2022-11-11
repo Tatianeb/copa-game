@@ -36,8 +36,8 @@
    :exception pretty/exception
    :data {:coercion reitit.schema/coercion
           :muuntaja (m/create
-                      (-> m/default-options
-                          (assoc-in [:formats "application/json" :decoder-opts :bigdecimals] true)))
+                     (-> m/default-options
+                         (assoc-in [:formats "application/json" :decoder-opts :bigdecimals] true)))
           :interceptors [;; swagger feature
                          swagger/swagger-feature
                          ;; query-params & form-params
@@ -48,11 +48,11 @@
                          (muuntaja/format-response-interceptor)
                          ;; exception handling
                          (exception/exception-interceptor
-                           (merge
-                             exception/default-handlers
-                             {:reitit.coercion/request-coercion  (coercion-error-handler 400)
-                              :reitit.coercion/response-coercion (coercion-error-handler 500)
-                              clojure.lang.ExceptionInfo exception-info-handler}))
+                          (merge
+                           exception/default-handlers
+                           {:reitit.coercion/request-coercion  (coercion-error-handler 400)
+                            :reitit.coercion/response-coercion (coercion-error-handler 500)
+                            clojure.lang.ExceptionInfo exception-info-handler}))
                          ;; decoding request body
                          (muuntaja/format-request-interceptor)
                          ;; coercing response bodys
@@ -64,15 +64,15 @@
 
 (defn router [routes]
   (pedestal/routing-interceptor
-    (http/router routes router-settings)
+   (http/router routes router-settings)
     ;; optional default ring handler (if no routes have matched)
-    (ring/routes
-      (swagger-ui/create-swagger-ui-handler
-        {:path "/"
-         :config {:validatorUrl nil
-                  :operationsSorter "alpha"}})
-      (ring/create-resource-handler)
-      (ring/create-default-handler))))
+   (ring/routes
+    (swagger-ui/create-swagger-ui-handler
+     {:path "/"
+      :config {:validatorUrl nil
+               :operationsSorter "alpha"}})
+    (ring/create-resource-handler)
+    (ring/create-default-handler))))
 
 (defrecord Router [router]
   component/Lifecycle

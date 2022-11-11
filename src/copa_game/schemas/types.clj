@@ -6,6 +6,6 @@
 (def HttpComponent (s/protocol components.http/HttpProvider))
 
 (s/defschema Components
-             {:config (s/protocol component/Lifecycle)
-              :http HttpComponent
-              :router (s/protocol component/Lifecycle)})
+  {:config (s/protocol component/Lifecycle)
+   :http HttpComponent
+   :router (s/protocol component/Lifecycle)})

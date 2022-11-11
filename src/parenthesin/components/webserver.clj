@@ -56,11 +56,11 @@
           init-fn (if (= env :dev) dev-init prod-init)]
       (logs/log :info :webserver :start {:env env :port port})
       (assoc this :webserver
-                  (-> (base-service port)
-                      (init-fn (:router router))
-                      (system-interceptors this)
-                      (server/create-server)
-                      (server/start)))))
+             (-> (base-service port)
+                 (init-fn (:router router))
+                 (system-interceptors this)
+                 (server/create-server)
+                 (server/start)))))
 
   (stop [this]
     (logs/log :info :webserver :stop)

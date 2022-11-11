@@ -5,9 +5,9 @@
 (defn setup [level stream]
   (timbre/set-level! level)
   (timbre/merge-config!
-    {:appenders
-     {:println
-      (core-appenders/println-appender {:stream stream})}}))
+   {:appenders
+    {:println
+     (core-appenders/println-appender {:stream stream})}}))
 
 (defn log [level & args]
   (timbre/log level args))
