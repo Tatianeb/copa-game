@@ -1,10 +1,9 @@
 (ns parenthesin.components.webserver
-  (:require
-   [com.stuartsierra.component :as component]
-   [io.pedestal.http :as server]
-   [io.pedestal.interceptor.helpers :refer [before]]
-   [parenthesin.logs :as logs]
-   [reitit.pedestal :as pedestal]))
+  (:require [com.stuartsierra.component :as component]
+            [io.pedestal.http :as server]
+            [io.pedestal.interceptor.helpers :refer [before]]
+            [parenthesin.logs :as logs]
+            [reitit.pedestal :as pedestal]))
 
 (defn- add-system [service]
   (before (fn [context] (assoc-in context [:request :components] service))))

@@ -1,9 +1,8 @@
 (ns copa-game.routes
-  (:require
-   [copa-game.ports.http-in :as ports.http-in]
-   [copa-game.schemas.out :as out]
-   [reitit.swagger :as swagger]
-   [schema.core :as s]))
+  (:require [copa-game.ports.http-in :as ports.http-in]
+            [copa-game.schemas.out :as out]
+            [reitit.swagger :as swagger]
+            [schema.core :as s]))
 
 (def routes
   [["/swagger.json"

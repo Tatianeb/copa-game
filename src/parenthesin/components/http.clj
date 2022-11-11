@@ -1,10 +1,9 @@
 (ns parenthesin.components.http
-  (:require
-   [clj-http.client :as http]
-   [clj-http.util :as http-util]
-   [com.stuartsierra.component :as component]
-   [parenthesin.logs :as logs]
-   [schema.core :as s]))
+  (:require [clj-http.client :as http]
+            [clj-http.util :as http-util]
+            [com.stuartsierra.component :as component]
+            [parenthesin.logs :as logs]
+            [schema.core :as s]))
 
 (s/defschema HttpRequestInput
   {:url s/Str

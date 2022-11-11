@@ -1,6 +1,5 @@
 (ns copa-game.schemas.out
-  (:require
-   [schema.core :as s]))
+  (:require [schema.core :as s]))
 
 (s/defschema Team
   {:id      s/Str

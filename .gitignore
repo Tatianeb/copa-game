@@ -13,6 +13,3 @@ pom.xml.asc
 .idea/
 .log/
 copagame.iml
-.clj-kondo/com.github.seancorfield/next.jdbc/hooks/com/github/seancorfield/next_jdbc.clj
-
-.clj-kondo/com.github.seancorfield/next.jdbc/

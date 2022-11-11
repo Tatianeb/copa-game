@@ -1,8 +1,7 @@
 (ns copa-game.schemas.types
-  (:require
-   [com.stuartsierra.component :as component]
-   [parenthesin.components.http :as components.http]
-   [schema.core :as s]))
+  (:require [com.stuartsierra.component :as component]
+            [parenthesin.components.http :as components.http]
+            [schema.core :as s]))
 
 (def HttpComponent (s/protocol components.http/HttpProvider))
 

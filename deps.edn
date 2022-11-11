@@ -19,7 +19,14 @@
         org.slf4j/slf4j-api {:mvn/version "1.7.32"}
         prismatic/schema {:mvn/version "1.2.0"}}
  :aliases
- {:clojure-lsp {:replace-deps {com.github.clojure-lsp/clojure-lsp {:mvn/version "2022.01.03-19.46.10"}}
+ {:test {:extra-paths ["test"]
+         :extra-deps  {lambdaisland/kaocha {:mvn/version "1.60.977"}
+                       lambdaisland/kaocha-cloverage {:mvn/version "1.0.75"}
+                       nubank/matcher-combinators {:mvn/version "3.3.1"}
+                       nubank/state-flow {:mvn/version "5.14.0"}}
+         :main-opts   ["-m" "kaocha.runner"]}
+
+  :clojure-lsp {:replace-deps {com.github.clojure-lsp/clojure-lsp {:mvn/version "2022.01.03-19.46.10"}}
                 :main-opts ["-m" "clojure-lsp.main"]}
 
   :uberjar {:replace-deps {com.github.seancorfield/depstar {:mvn/version "2.1.303"}}

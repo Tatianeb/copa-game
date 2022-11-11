@@ -1,9 +1,8 @@
 (ns copa-game.ports.http-out
-  (:require
-   [copa-game.schemas.out :as schemas.out]
-   [copa-game.schemas.types :as schemas.types]
-   [parenthesin.components.http :as components.http]
-   [schema.core :as s]))
+  (:require [copa-game.schemas.out :as schemas.out]
+            [copa-game.schemas.types :as schemas.types]
+            [parenthesin.components.http :as components.http]
+            [schema.core :as s]))
 
 (s/defn get-teams :- [schemas.out/Team]
   [{:keys [http]} :- schemas.types/Components]
